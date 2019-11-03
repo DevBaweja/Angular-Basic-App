@@ -15,7 +15,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  constructor() { }
+  allowNewServer : boolean = false;
+  constructor() { 
+    setTimeout( () => {
+      this.allowNewServer = true;
+    }
+    ,2000);
+  }
+
+  getAccess = function():boolean{
+    return this.allowNewServer;
+  }
 
   ngOnInit() {
   }
